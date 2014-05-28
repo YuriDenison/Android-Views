@@ -2,10 +2,10 @@
 <resources>
     <declare-styleable name="ButtonEditText">
         <attr name="clearButtonMode" format="enum">
-            <enum name="never" value="0"/>
-            <enum name="whileEditing" value="1"/>
-            <enum name="ifNotEmpty" value="2"/>
-            <enum name="always" value="3"/>
+            <enum name="always" value="0" />
+            <enum name="whenFocusedAndNotEmpty" value="1" />
+            <enum name="whenFocused" value="2" />
+            <enum name="never" value="3" />
         </attr>
     </declare-styleable>
 </resources>

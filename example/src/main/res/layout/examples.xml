@@ -4,4 +4,6 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.denison.view.example.ExamplesActivity">
+
+    <include layout="@layout/edittext" />
 </LinearLayout>

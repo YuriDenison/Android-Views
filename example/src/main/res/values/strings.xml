@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
     <string name="app_name">Android Views</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
 
+    <string name="editTextModeAlways">Visible always</string>
+    <string name="editTextModeFocused">Visible when focused</string>
+    <string name="editTextModeIfNotEmpty">Visible when is not empty and focused</string>
+    <string name="editTextModeNever">Visible never</string>
 </resources>
