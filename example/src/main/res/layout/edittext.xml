@@ -1,0 +1,44 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.denison.view.example.ExamplesActivity">
+
+    <com.denison.view.ButtonEditText xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_action_remove"
+        android:singleLine="true"
+        android:id="@+id/button_edit_text_mode_always"
+        app:clearButtonMode="always"/>
+
+    <com.denison.view.ButtonEditText xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_action_remove"
+        android:singleLine="true"
+        android:id="@+id/button_edit_text_mode_not_empty"
+        app:clearButtonMode="ifNotEmpty"/>
+
+    <com.denison.view.ButtonEditText xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_action_remove"
+        android:singleLine="true"
+        android:id="@+id/button_edit_text_mode_editing"
+        app:clearButtonMode="whileEditing"/>
+
+    <com.denison.view.ButtonEditText xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:drawableRight="@drawable/ic_action_remove"
+        android:singleLine="true"
+        android:id="@+id/button_edit_text_mode_never"
+        app:clearButtonMode="never"/>
+
+</LinearLayout>

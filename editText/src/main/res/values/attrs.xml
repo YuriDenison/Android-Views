@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="ButtonEditText">
+        <attr name="clearButtonMode" format="enum">
+            <enum name="never" value="0"/>
+            <enum name="whileEditing" value="1"/>
+            <enum name="ifNotEmpty" value="2"/>
+            <enum name="always" value="3"/>
+        </attr>
+    </declare-styleable>
+</resources>
