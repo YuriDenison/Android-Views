@@ -27,10 +27,12 @@ public class ButtonEditText extends EditText {
     private Drawable mDrawableRight;
     private OnClickListener mClickListener;
     private ClearButtonMode mButtonMode;
+    private boolean isActive;
 
     public ButtonEditText(Context context) {
         super(context);
         setDrawableClickListener(DEFAULT_BUTTON_LISTENER);
+        isActive = true;
     }
 
     public ButtonEditText(Context context, AttributeSet attrs) {
@@ -46,10 +48,11 @@ public class ButtonEditText extends EditText {
     }
 
     private void init(AttributeSet attrs) {
+        isActive = false;
         final TypedArray a = getContext().obtainStyledAttributes(attrs, R.styleable.ButtonEditText);
         mButtonMode = ClearButtonMode.fromInt(
                 a.getInt(R.styleable.ButtonEditText_clearButtonMode,
-                        ClearButtonMode.FOCUSED_IF_NOT_EMPTY.getId())
+                        ClearButtonMode.ALWAYS.getId())
         );
 
         addTextChangedListener(new TextWatcher() {
@@ -68,12 +71,13 @@ public class ButtonEditText extends EditText {
                 }
             }
         });
+        a.recycle();
     }
 
     @Override
     public void setCompoundDrawables(Drawable left, Drawable top, Drawable right, Drawable bottom) {
+        isActive = right != null;
         if (right != null && mDrawableRight == null) {
-            right.setBounds(0, 0, right.getIntrinsicWidth(), right.getIntrinsicHeight());
             mDrawableRight = right;
 
             if (mButtonMode != ClearButtonMode.ALWAYS) {
@@ -113,7 +117,7 @@ public class ButtonEditText extends EditText {
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
-        if (mDrawableRight != null && mClickListener != null && event.getAction() == MotionEvent.ACTION_DOWN) {
+        if (isActive && mDrawableRight != null && mClickListener != null && event.getAction() == MotionEvent.ACTION_DOWN) {
             int actionX = (int) event.getX();
             int actionY = (int) event.getY();
 
